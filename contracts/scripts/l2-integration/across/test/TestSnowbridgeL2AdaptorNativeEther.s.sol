@@ -125,8 +125,9 @@ contract TestSnowbridgeL2AdaptorNativeEther is Script {
             revert("Unsupported L2 network");
         }
 
-        SnowbridgeL2Adaptor(l2SnowbridgeAdaptor).sendEtherAndCall{value: params.inputAmount}(
-            params, sendParams, recipient, keccak256("TestNativeEtherL2AdaptorTopicId")
-        );
+        SnowbridgeL2Adaptor(l2SnowbridgeAdaptor)
+        .sendEtherAndCall{
+            value: params.inputAmount
+        }(params, sendParams, recipient, keccak256("TestNativeEtherL2AdaptorTopicId"));
     }
 }

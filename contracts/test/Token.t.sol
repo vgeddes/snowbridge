@@ -616,9 +616,7 @@ contract TokenTest is Test {
 
         vm.startPrank(router);
         for (uint256 i = 0; i < recipients.length; i++) {
-            require(
-                token.transferFrom(owner, recipients[i], transferAmount), "transferFrom failed"
-            );
+            require(token.transferFrom(owner, recipients[i], transferAmount), "transferFrom failed");
             totalTransferred += transferAmount;
 
             // Verify each transfer

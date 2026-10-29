@@ -32,7 +32,11 @@ library MMRProof {
         return root == acc;
     }
 
-    function hashPairs(bytes32 x, bytes32 y, uint256 order) internal pure returns (bytes32 value) {
+    function hashPairs(bytes32 x, bytes32 y, uint256 order)
+        internal
+        pure
+        returns (bytes32 value)
+    {
         assembly {
             switch order
             case 0 {
